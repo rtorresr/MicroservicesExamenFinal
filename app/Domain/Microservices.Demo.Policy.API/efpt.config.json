@@ -1,0 +1,66 @@
+﻿{
+   "ContextClassName": "PolicyDbContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "DoNotCombineNamespace": false,
+   "IdReplace": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": "Infrastructure\/Data\/Context",
+   "OutputPath": "Infrastructure\/Data\/Entities",
+   "ProjectRootNamespace": "Microservices.Demo.Policy.API",
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Address]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Message]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Offer]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[OfferCover]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[OfferStatus]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Policy]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[PolicyCover]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[PolicyHolder]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[PolicyStatus]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[PolicyValidityPeriod]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[PolicyVersion]"
+      }
+   ],
+   "UseDatabaseNames": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseInflector": true,
+   "UseLegacyPluralizer": false,
+   "UseSpatial": false
+}

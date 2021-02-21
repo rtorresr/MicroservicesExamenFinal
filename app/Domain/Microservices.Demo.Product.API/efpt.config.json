@@ -1,0 +1,46 @@
+﻿{
+   "ContextClassName": "ProductDbContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "DoNotCombineNamespace": false,
+   "IdReplace": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": "Infrastructure\/Data\/Context",
+   "OutputPath": "Infrastructure\/Data\/Entities",
+   "ProjectRootNamespace": "Microservices.Demo.Product.API",
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Choice]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Cover]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Product]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[ProductStatus]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Question]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[QuestionType]"
+      }
+   ],
+   "UseDatabaseNames": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseInflector": true,
+   "UseLegacyPluralizer": false,
+   "UseSpatial": false
+}

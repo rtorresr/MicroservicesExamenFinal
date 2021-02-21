@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Microservices.Demo.DiscoveryServer": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+﻿server:
+  port: 8888
+spring:
+  application:
+    name: Microservices.Demo.ConfigServer
+  cloud:    
+    config:
+      server:
+        git:
+          uri: https://github.com/rtorresr/Microservices-Config-Repository
+          search-paths:
+            - '{application}'
+eureka:
+  instance:
+    appName: Microservices.Demo.ConfigServer
+    hostname: microservices.demo.configserver
+#    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://microservices.demo.discoveryserver:8761/eureka/

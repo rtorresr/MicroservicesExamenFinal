@@ -1,0 +1,114 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Products/{everything}",
+      "DownstreamScheme": "https",
+      "UpstreamPathTemplate": "/api/Products/{everything}",
+      "ServiceName": "Microservices.Demo.Product.API",
+      "UpstreamHttpMethod": [ "Get" ],
+      "FileCacheOptions": { "TtlSeconds": 15 },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "ApiSecurityAuthenticationScheme",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "userType": "SALESMAN"
+      },
+      "DangerousAcceptAnyServerCertificateValidator": true
+    },
+    {
+      "DownstreamPathTemplate": "/api/Products",
+      "DownstreamScheme": "https",
+      "UpstreamPathTemplate": "/api/Products",
+      "ServiceName": "Microservices.Demo.Product.API",
+      "UpstreamHttpMethod": [ "Get" ],
+      "FileCacheOptions": { "TtlSeconds": 15 },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "ApiSecurityAuthenticationScheme",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "userType": "SALESMAN"
+      },
+      "DangerousAcceptAnyServerCertificateValidator": true
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Offers",
+      "DownstreamScheme": "https",
+      "UpstreamPathTemplate": "/api/Offers",
+      "ServiceName": "Microservices.Demo.Policy.API",
+      "UpstreamHttpMethod": [ "Post" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "ApiSecurityAuthenticationScheme",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "userType": "SALESMAN"
+      },
+      "DangerousAcceptAnyServerCertificateValidator": true,
+      "AddHeadersToRequest": {
+        "AgentLogin": "Claims[http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier] > value[0] > |"
+      }
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Policies",
+      "DownstreamScheme": "https",
+      "UpstreamPathTemplate": "/api/Policies",
+      "ServiceName": "Microservices.Demo.Policy.API",
+      "UpstreamHttpMethod": [ "Post" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "ApiSecurityAuthenticationScheme",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "userType": "SALESMAN"
+      },
+      "DangerousAcceptAnyServerCertificateValidator": true
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/Policies/{number}",
+      "DownstreamScheme": "https",
+      "UpstreamPathTemplate": "/api/Policies/{number}",
+      "ServiceName": "Microservices.Demo.Policy.API",
+      "UpstreamHttpMethod": [ "Get" ],
+      "FileCacheOptions": { "TtlSeconds": 15 },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "ApiSecurityAuthenticationScheme",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "userType": "SALESMAN"
+      },
+      "DangerousAcceptAnyServerCertificateValidator": true
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/PoliciesSearch",
+      "DownstreamScheme": "https",
+      "UpstreamPathTemplate": "/api/PoliciesSearch",
+      "ServiceName": "Microservices.Demo.PolicySearch.API",
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "ApiSecurityAuthenticationScheme",
+        "AllowedScopes": []
+      },
+      "RouteClaimsRequirement": {
+        "userType": "SALESMAN"
+      },
+      "DangerousAcceptAnyServerCertificateValidator": true
+    }
+  ],
+  "GlobalConfiguration": {
+    "RequestIdKey": "OcRequestId",
+    "AdministrationPath": "/administration",
+    "UseServiceDiscovery": true,
+    "ServiceDiscoveryProvider": {
+      "Type": "Eureka",
+      "Host": "http://microservices.demo.discoveryserver:8761/eureka",
+      "Port": "8761"
+    }
+  }
+}

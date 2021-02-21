@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>c5fc07fa-f293-4314-86aa-ec7c50315bc7</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..</DockerfileContext>
+    <DockerComposeProjectPath>..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="CQRS\Queries\Infrastructure\Dtos\Converter\**" />
+    <Content Remove="CQRS\Queries\Infrastructure\Dtos\Converter\**" />
+    <EmbeddedResource Remove="CQRS\Queries\Infrastructure\Dtos\Converter\**" />
+    <None Remove="CQRS\Queries\Infrastructure\Dtos\Converter\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+    <PackageReference Include="RestEase" Version="1.4.10" />
+    <PackageReference Include="Steeltoe.Discovery.ClientCore" Version="3.0.1" />
+    <PackageReference Include="Steeltoe.Discovery.Eureka" Version="3.0.1" />
+    <PackageReference Include="Steeltoe.Extensions.Configuration.ConfigServerCore" Version="3.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.2.1" />
+  </ItemGroup>
+
+
+</Project>

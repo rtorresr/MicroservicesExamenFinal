@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>e8352321-d928-41b2-96bf-b93d302fbd26</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..</DockerfileContext>
+    <DockerComposeProjectPath>..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Infrastructure\Data\MongoDB\**" />
+    <Content Remove="Infrastructure\Data\MongoDB\**" />
+    <EmbeddedResource Remove="Infrastructure\Data\MongoDB\**" />
+    <None Remove="Infrastructure\Data\MongoDB\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+    <PackageReference Include="MongoDB.Bson" Version="2.10.2" />
+    <PackageReference Include="MongoDB.Driver" Version="2.10.2" />
+    <PackageReference Include="Steeltoe.Discovery.ClientCore" Version="3.0.1" />
+    <PackageReference Include="Steeltoe.Discovery.Eureka" Version="3.0.1" />
+    <PackageReference Include="Steeltoe.Extensions.Configuration.ConfigServerCore" Version="3.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0" />
+  </ItemGroup>
+
+
+</Project>

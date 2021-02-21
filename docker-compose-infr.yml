@@ -1,0 +1,47 @@
+version: '3.4'
+
+services:
+########################################################## microservices.demo.discoveryserver #############################################################################
+  microservices.demo.discoveryserver:
+    image: ${DOCKER_REGISTRY-}microservicesdemodiscoveryserver
+    mem_limit: 256m
+    mem_reservation: 128M
+    cpus: 0.25
+    ports:
+       - 8761:8761
+    build:
+      context: .
+      dockerfile: app/Infrastructure/Microservices.Demo.DiscoveryServer/Dockerfile
+    networks:
+      - backend
+########################################################## microservices.demo.configserver ################################################################################
+  microservices.demo.configserver:
+    image: ${DOCKER_REGISTRY-}microservicesdemoconfigserver
+    mem_limit: 256m
+    mem_reservation: 128M
+    cpus: 0.25
+    ports:
+       - 8888:8888
+    build:
+      context: .
+      dockerfile: app/Infrastructure/Microservices.Demo.ConfigServer/Dockerfile
+    networks:
+      - backend
+########################################################## microservices.demo.rabbitmq ####################################################################################
+  microservices.demo.rabbitmq:
+    image: rabbitmq:3-management
+    mem_limit: 256m
+    mem_reservation: 128M
+    cpus: 0.25
+    ports:
+       - 15672:15672
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin    
+    networks:
+      - backend
+########################################################## networks #######################################################################################################
+networks:
+  backend:
+    name: backend
+    driver: bridge
